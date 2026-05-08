@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.daan-root {
+  --bg: #f7f5f2;
+  --bg-warm: #efeae3;
+  --panel: #ffffff;
+  --line: #e2dcd4;
+  --line-strong: #cdc5bb;
+  --text: #2a2826;
+  --text-soft: #5a544e;
+  --muted: #8a857e;
+  --accent: #C00D0D;
+  --accent-dark: #951010;
+  --warm: #766F6C;
+  --warn: #b8541f;
+  --warn-bg: rgba(184, 84, 31, 0.08);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 40px 24px 60px;
+}
+
+.daan-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.daan-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.daan-titel {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin: 0;
+  line-height: 1;
+  color: var(--text);
+}
+
+.daan-titel .accent {
+  color: var(--accent);
+}
+
+.daan-sub {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+
+.daan-form {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 24px;
+  box-shadow: 0 1px 2px rgba(42, 40, 38, 0.03);
+}
+
+.daan-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.daan-veld {
+  display: flex;
+  flex-direction: column;
+}
+
+.daan-label {
+  font-size: 11px;
+  color: var(--text-soft);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+
+.daan-input,
+.daan-textarea {
+  background: var(--bg-warm);
+  border: 1px solid transparent;
+  color: var(--text);
+  padding: 11px 14px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14.5px;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.daan-input::placeholder,
+.daan-textarea::placeholder {
+  color: var(--muted);
+}
+
+.daan-input:focus,
+.daan-textarea:focus {
+  background: #fff;
+  border-color: var(--accent);
+}
+
+.daan-textarea {
+  resize: vertical;
+  min-height: 60px;
+  line-height: 1.5;
+}
+
+.daan-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.daan-knop {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.05s ease;
+}
+
+.daan-knop:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+.daan-knop:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.daan-knop:disabled {
+  background: var(--line-strong);
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.daan-knop-secundair {
+  background: transparent;
+  color: var(--text-soft);
+  border: 1px solid var(--line-strong);
+  padding: 12px 18px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.daan-knop-secundair:hover {
+  color: var(--text);
+  border-color: var(--text-soft);
+}
+
+.daan-modelkeuze {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+.daan-modelkeuze label {
+  font-weight: 500;
+}
+
+.daan-modelkeuze select {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid var(--line-strong);
+  padding: 7px 10px;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.daan-status {
+  margin-top: 28px;
+  font-size: 13px;
+  color: var(--text-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.daan-puls {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: puls 1.2s ease-in-out infinite;
+}
+
+@keyframes puls {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.8); }
+}
+
+.daan-fout {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: var(--warn-bg);
+  border-left: 3px solid var(--warn);
+  border-radius: 3px;
+  color: var(--warn);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.daan-rapport {
+  margin-top: 32px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 32px 38px 36px;
+  box-shadow: 0 1px 2px rgba(42, 40, 38, 0.03);
+}
+
+.daan-rapport-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.daan-rapport-tijd {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.daan-h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 24px 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.daan-h3:first-child {
+  margin-top: 0;
+}
+
+.daan-p {
+  margin: 0 0 14px;
+  line-height: 1.65;
+  font-size: 14.5px;
+  color: var(--text);
+}
+
+.daan-lijst {
+  margin: 0 0 14px;
+  padding-left: 22px;
+  line-height: 1.65;
+  font-size: 14.5px;
+  color: var(--text);
+}
+
+.daan-lijst li {
+  margin-bottom: 7px;
+  padding-left: 4px;
+}
+
+.daan-lijst li::marker {
+  color: var(--accent);
+}
+
+.daan-genummerd {
+  counter-reset: haakje;
+  list-style: none;
+  margin: 0 0 14px;
+  padding: 0;
+}
+
+.daan-genummerd > li {
+  counter-increment: haakje;
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+  font-size: 14.5px;
+}
+
+.daan-genummerd > li::before {
+  content: counter(haakje);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+.daan-haakje {
+  padding-top: 2px;
+}
+
+.daan-voet {
+  margin-top: 40px;
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 600px) {
+  .daan-row { grid-template-columns: 1fr; }
+  .daan-controls { flex-direction: column; align-items: stretch; gap: 12px; }
+  .daan-controls > div { width: 100%; }
+  .daan-rapport { padding: 24px 22px 28px; }
+}
